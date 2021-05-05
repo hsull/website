@@ -10,11 +10,12 @@
 	font-size: 7.5vh;
 	text-align: left;
 	line-height: 90%;
+	margin-top:3vw;
 }
 .main-text-right {
 	font-size: 7.5vh;
 	text-align: right;
-	line-height: 90%
+	line-height: 90%;
 }
 
 .sub-text {
