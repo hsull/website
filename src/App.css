@@ -14,10 +14,6 @@
   }
 }
 
-.title-text-container {
-  justify-content: left;
-}
-
 .App-header {
   min-height: 100vh;
   display: flex;
@@ -64,5 +60,14 @@ p {
   padding:2vh
 }
 .socialIcons {
-  padding: 0.5vh;
+  padding: vh;
+}
+
+SocialIcons {
+  height: 1vh;
+}
+
+
+.title-text-container {
+  padding:8vh;
 }

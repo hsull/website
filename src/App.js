@@ -10,7 +10,7 @@ import chevronDown from './resources/chevron-down.svg'
 
 function App() {
   useEffect(() => {
-		Aos.init({duration: 2000, once:'false', easing:"ease-in-out", mirror:'true'});
+		Aos.init({duration: 2000, once:'false', easing:"ease-in-out-quad", mirror:'true'});
 	}, []);
 
   return (
@@ -25,33 +25,13 @@ function App() {
     <div className="socialIcons">
     <SocialIcon className = "socialIcons" url = "https://linkedin.com/in/hamishsullivan"/>
     <SocialIcon className = "socialIcons" url = "https://github.com/hsull"/>
-    <SocialIcon className = "socialIcons" url = "mailto:hgsull@outlook.com"/>
-
+    <SocialIcon className = "socialIcons" url = "mailto:hgsull@outlook.com" bgColor="green"/>
+    <div className="title-text-container">
+    <TitleText text="Welcome!"/>
+    </div>
     <p></p>
     </div>
   </div>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-
       </header>
 	  </div>
 
