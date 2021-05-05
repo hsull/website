@@ -1,4 +1,5 @@
 # Getting Started with Create React App
+chevron-down.svg from open source icon set https://feathericons.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

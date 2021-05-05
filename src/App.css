@@ -49,5 +49,10 @@
 
 }
 
-.socialIcons {
+.chevron {
+  padding-top: 5vh;
+}
+
+.chevron-down {
+  height: 6vh;
 }
