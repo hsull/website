@@ -56,3 +56,13 @@
 .chevron-down {
   height: 6vh;
 }
+
+p {
+  font-size: 18px;
+}
+.social {
+  padding:2vh
+}
+.socialIcons {
+  padding: 0.5vh;
+}

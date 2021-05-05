@@ -4,10 +4,11 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	padding-top: 2vh;
+	line-height: 50%;
+
 }
 
 .title-text {
-	text-align:left;
 	font-size: 5vh;
 	font-weight:bold;
 }
