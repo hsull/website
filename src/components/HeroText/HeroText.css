@@ -1,0 +1,25 @@
+.text {
+	color:black;
+	font-family: "Palatino", "Palatino Linotype", serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	padding: 1.5vh;
+}
+
+.main-text-left {
+	font-size: 7.5vh;
+	text-align: left;
+	line-height: 90%;
+}
+.main-text-right {
+	font-size: 7.5vh;
+	text-align: right;
+	line-height: 90%
+}
+
+.sub-text {
+	padding-top: 0.6vh;
+	font-size: 3vh;
+}
+
+

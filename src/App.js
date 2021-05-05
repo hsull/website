@@ -1,24 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import HeroText from './components/HeroText/HeroText';
+import ProfilePhoto from './resources/ProfilePhoto.jpg';
+import TitleText from './components/TitleText/TitleText';
+import { SocialIcon } from 'react-social-icons';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HeroText/>
+       	  <div className = "profile-photo-container">
+	  <img src = {ProfilePhoto} className = "profile-photo"/>
+	  </div> 
+    <div className="title-text-container">
+    <TitleText text = "Links"/>
     </div>
+    <div className="socialIcons">
+    <SocialIcon className = "socialIcons" url = "https://linkedin.com/in/hamishsullivan"/>
+    <SocialIcon className = "socialIcons" url = "https://github.com/hsull"/>
+  <p></p>
+
+  </div>
+      </header>
+      <body>
+        </body> 
+	  </div>
   );
 }
 

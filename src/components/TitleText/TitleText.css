@@ -1,0 +1,14 @@
+.text {
+	color:black;
+	font-family: "Palatino", "Palatino Linotype", serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	padding-top: 2vh;
+}
+
+.title-text {
+	text-align:left;
+	font-size: 5vh;
+	font-weight:bold;
+}
+
