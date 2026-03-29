@@ -1,7 +1,7 @@
 const qualifications = [
   {
     institution: "The University of Sydney",
-    title: "BSc / BAdv (Physics and Economics)",
+    title: "BSc / BAdv Hons (Physics and Economics, Economics Honours)",
     date: "2019 - 2023",
     details: "",
     bullets: [
@@ -19,14 +19,14 @@ const workExperience = [
     title: "Research Economist | Frameworks and Macroeconomics, Economic Research",
     date: "From Oct 2025",
     details:
-      "Working on the RBA's DSGE model, DINGO, while also completing other research.",
+      "Working on and with the RBA's DSGE model, DINGO, while also completing other research.",
   },
   {
     employer: "Reserve Bank of Australia",
     title: "Analyst | Prices, Wages and Labour, Economic Analysis",
     date: "Feb 2024 - Sep 2025",
     details:
-      "Prices desk analyst. Responsible for monitoring and forecasting price inflation and doing research into related issues.",
+      "Prices desk analyst. Responsible for interpreting inflation data, producing the Bank's central inflation forecast, and completing research into related analytical issues.",
   },
   {
     employer: "Reserve Bank of Australia",
@@ -301,7 +301,7 @@ const tabs = {
             <div class="research-interest-block">
               <h3 class="group-title">Topics</h3>
               <p class="section-copy">
-                Macroeconomic theory, inflation and markup dynamics, price and wage setting, monetary policy, economic measurement, and forecasting.
+                Macroeconomic theory, inflation and markup dynamics, price and wage setting, monetary policy, economic measurement, forecasting, AI dynamics.
               </p>
             </div>
             <div class="research-interest-block">
@@ -325,7 +325,7 @@ const tabs = {
         <div>
           <h2 class="section-title">A gentle introduction to DSGE</h2>
           <p class="section-copy">
-            I think learning DSGE can be hard if you don't already have a maths/physics background. So I wrote some notes aimed at making learning it as intuitive and time-efficient as possible. Coming soon.
+            Learning DSGE can be hard if you don't already have a maths/physics background. So I wrote some notes aimed at making learning it as intuitive and time-efficient as possible. Coming soon.
           </p>
         </div>
       </section>
