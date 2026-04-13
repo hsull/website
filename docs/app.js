@@ -311,7 +311,8 @@ const tabs = {
               </p>
             </div>
           </div>
-          <h2 class="section-title">Published research</h2>
+          <h2 class="section-title">Research</h2>
+          <p> With more to come soon! </p>
         </div>
         ${cardGridMarkup(researchOutputs)}
       </section>
