@@ -1,7 +1,7 @@
 const qualifications = [
   {
     institution: "The University of Sydney",
-    title: "BSc / BAdv Hons (Physics and Economics, Economics Honours)",
+    title: "BSc / BAdv (Physics and Economics, Economics Honours)",
     date: "2019 - 2023",
     details: "",
     bullets: [
@@ -67,14 +67,25 @@ const workExperience = [
 
 const researchOutputs = [
   {
-    title: "Phillips curves in real time: more useful for monetary policy than we thought?",
+    title: "The NAIRU and Output Gap in real-time: More reliable than previously thought?",
     date: "Forthcoming",
     details:
-      "With Nick West. Presented at the 2025 Public Sector Economics Conference.",
+      "With Nick West. Presented at 2025 Public Sector Economics Conference and 2026 'Norges Bank - RBA - RBNZ Workshop'.",
     linkLabel: "Conference listing",
     linkHref:
       "https://www.canberra.edu.au/about-uc/faculties/busgovlaw/news-and-events/public-sector-economics-conference",
   },
+
+  {
+    title: "Profit Margins and Consumer Prices",
+    date: "May 2026",
+    details:
+      "Co-authored first section of the article (economic theory and literature review) with Jonathan Hambur.",
+    linkLabel: "Conference listing",
+    linkHref:
+      "https://www.rba.gov.au",
+  },
+
   {
     title: "An update on the RBA's approach to assessing full employment",
     date: "Feb 2026",
@@ -84,6 +95,7 @@ const researchOutputs = [
     linkHref:
       "https://www.rba.gov.au/publications/technical-notes/2026/update-on-the-rbas-approach-to-assessing-full-employment.html",
   },
+
   {
     title: "Deployment opportunities for space photovolatics and the prospects for perovskite solar cells",
     date: "Nov 2021",
@@ -326,7 +338,7 @@ const tabs = {
         <div>
           <h2 class="section-title">A gentle introduction to DSGE</h2>
           <p class="section-copy">
-            Learning DSGE can be hard if you don't already have a maths/physics background. So I wrote some notes aimed at making learning it as intuitive and time-efficient as possible. Coming soon.
+            Some notes for learning DSGE as fast as possible, coming soon.
           </p>
         </div>
       </section>
