@@ -313,13 +313,13 @@ const tabs = {
             <div class="research-interest-block">
               <h3 class="group-title">Topics</h3>
               <p class="section-copy">
-                Macroeconomic theory, inflation and markup dynamics, price and wage setting, monetary policy, economic measurement, forecasting, AI.
+                Macroeconomic theory, inflation dynamics, AI, price and wage setting, monetary policy, economic measurement, forecasting.
               </p>
             </div>
             <div class="research-interest-block">
               <h3 class="group-title">Techniques</h3>
               <p class="section-copy">
-                DSGE modelling, time series analysis, dynamical systems, machine learning, natural language processing, networks, agent-based modelling.
+                DSGE modelling, time series analysis, dynamics, machine learning, natural language processing, networks, agent-based modelling.
               </p>
             </div>
           </div>
