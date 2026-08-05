@@ -1,7 +1,7 @@
 const qualifications = [
   {
     institution: "The University of Sydney",
-    title: "BSc / BAdv Hons (Physics and Economics, Economics Honours)",
+    title: "BSc / BAdv (Physics and Economics, Economics Honours)",
     date: "2019 - 2023",
     details: "",
     bullets: [
@@ -75,6 +75,17 @@ const researchOutputs = [
     linkHref:
       "https://www.canberra.edu.au/about-uc/faculties/busgovlaw/news-and-events/public-sector-economics-conference",
   },
+
+  {
+    title: "Profit Margins and Consumer Prices",
+    date: "May 2026",
+    details:
+      "Co-authored first section of the article (economic theory and literature review) with Jonathan Hambur.",
+    linkLabel: "Conference listing",
+    linkHref:
+      "https://www.rba.gov.au",
+  },
+
   {
     title: "Digest: The Relationship Between Markups, Margins and Inflation",
     date: "RBA Insights, Jul 2026",
@@ -113,6 +124,7 @@ const policyPublications = [
     linkHref:
       "https://www.rba.gov.au/publications/technical-notes/2026/update-on-the-rbas-approach-to-assessing-full-employment.html",
   },
+
   {
     title: "The Transition to a Complete Monthly CPI",
     date: "RBA Technical Note, Nov 2025",
@@ -373,7 +385,7 @@ const tabs = {
             <div class="research-interest-block">
               <h3 class="group-title">Techniques</h3>
               <p class="section-copy">
-                DSGE modelling, time series analysis, dynamical systems, machine learning, natural language processing, networks, agent-based modelling.
+                DSGE modelling, time series analysis, dynamics, machine learning, natural language processing, networks, agent-based modelling.
               </p>
             </div>
           </div>
