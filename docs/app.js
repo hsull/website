@@ -67,17 +67,46 @@ const workExperience = [
 
 const researchOutputs = [
   {
-    title: "Phillips curves in real time: more useful for monetary policy than we thought?",
+    title: "The NAIRU, Output Gap, and Phillips Curve in Real-Time",
     date: "Forthcoming",
     details:
-      "With Nick West. Presented at the 2025 Public Sector Economics Conference.",
+      "With Nick West. Presented at the 2025 Public Sector Economics Conference and the 2026 Norges Bank - RBA - RBNZ Workshop.",
     linkLabel: "Conference listing",
     linkHref:
       "https://www.canberra.edu.au/about-uc/faculties/busgovlaw/news-and-events/public-sector-economics-conference",
   },
   {
-    title: "An update on the RBA's approach to assessing full employment",
-    date: "Feb 2026",
+    title: "Digest: The Relationship Between Markups, Margins and Inflation",
+    date: "RBA Insights, Jul 2026",
+    details:
+      "With Jonathan Hambur. A short companion piece to the Bulletin article on margins, mark-ups and consumer prices.",
+    linkLabel: "Accessible at rba.gov.au",
+    linkHref:
+      "https://www.rba.gov.au/publications/insights/australian-economy/2026/digest-the-relationship-between-markups-margins-and-inflation.html",
+  },
+  {
+    title: "Deployment Opportunities for Space Photovoltaics and the Prospects for Perovskite Solar Cells",
+    date: "Nov 2021",
+    details:
+      "Co-first author with Professor Anita Ho-Baillie. Published in Advanced Materials Technologies.",
+    linkLabel: "View DOI",
+    linkHref: "https://doi.org/10.1002/admt.202101059",
+  },
+];
+
+const policyPublications = [
+  {
+    title: "Margins, Mark-ups and Consumer Prices: Theory, Measurement and Implications",
+    date: "RBA Bulletin, May 2026",
+    details:
+      "With Kate Davis, Jonathan Hambur, Kevin Lane, Dan Megow and Sally Rafter.",
+    linkLabel: "Accessible at rba.gov.au",
+    linkHref:
+      "https://www.rba.gov.au/publications/bulletin/2026/may/margins-mark-ups-and-consumer-prices-theory-measurement-and-implications.html",
+  },
+  {
+    title: "An Update on the RBA's Approach to Assessing Full Employment",
+    date: "RBA Technical Note, Feb 2026",
     details:
       "With Mike Major and Kevin Lane.",
     linkLabel: "Accessible at rba.gov.au",
@@ -85,12 +114,35 @@ const researchOutputs = [
       "https://www.rba.gov.au/publications/technical-notes/2026/update-on-the-rbas-approach-to-assessing-full-employment.html",
   },
   {
-    title: "Deployment opportunities for space photovolatics and the prospects for perovskite solar cells",
-    date: "Nov 2021",
+    title: "The Transition to a Complete Monthly CPI",
+    date: "RBA Technical Note, Nov 2025",
     details:
-      "Co-first author with Professor Anita Ho-Baillie. Published in Advanced Materials Technologies.",
-    linkLabel: "View DOI",
-    linkHref: "https://doi.org/10.1002/admt.202101059",
+      "Setting out how the RBA would treat the ABS's new complete monthly CPI.",
+    linkLabel: "Accessible at rba.gov.au",
+    linkHref:
+      "https://www.rba.gov.au/publications/technical-notes/2025/the-transition-to-a-complete-monthly-cpi.html",
+  },
+];
+
+const software = [
+  {
+    title: "ezdyn and ezdyn dashboard",
+    date: "R package",
+    details:
+      "Load in linear dynamic models (from Dynare or an Excel file of IRFs) and get straight to the interesting part: impulse responses, scenarios, 'alternative policy path' exercises and historical shock decompositions, lined up side by side across every model at once. ezdyn takes care of the fiddly bits, handling variable naming, units, scaling and consistent plotting for you, and powers a user-friendly interactive dashboard for exploring a configured set of models.",
+    linkLabel: "View on GitHub",
+    linkHref: "https://github.com/RBA-ER-Replication/ezdyn",
+  },
+  {
+    title: "RBAtardis",
+    date: "Forthcoming",
+    details:
+      "Tools for 'sending models back in time': working with data vintages and sourcing legacy vintage data from the ABS.",
+  },
+  {
+    title: "RBAclio",
+    details:
+      "An internal RBA system for distributed-compute natural language processing, letting users build computationally intensive text-based indicators from a corpus of 30 years of Australian news articles and RBA publications.",
   },
 ];
 
@@ -114,6 +166,17 @@ const homeLinks = [
     `,
   },
   {
+    label: "RBA researcher profile",
+    href: "https://www.rba.gov.au/research/our-researchers/hamish-sullivan.html",
+    icon: `
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <g transform="translate(1.5 2.68) scale(0.3972)">
+          <path d="m9.818,0h33.871l.116.232c-31.372,14.35-9.586,42.47,8.947,10.806l.116.116-9.179,35.788h-.233c-2.033-27.132-31.256-26.435-33.348-.348h-.29L0,13.885l.348-.058C23.355,40.726,37.705,15.745,9.76.174l.058-.174Z" />
+        </g>
+      </svg>
+    `,
+  },
+  {
     label: "Email",
     href: "mailto:hgsull@outlook.com",
     icon: `
@@ -128,7 +191,6 @@ const tabOrder = [
   { id: "home", label: "Home" },
   { id: "experience", label: "Experience" },
   { id: "research", label: "Research" },
-  { id: "dsge-notes", label: "DSGE Notes" },
 ];
 
 const assetVersion = "20260329-1";
@@ -156,7 +218,11 @@ function cardMarkup(item) {
             : ""
         }
         <h3 class="content-card__title">${escapeHtml(item.title)}</h3>
-        <p class="content-card__date">${escapeHtml(item.date)}</p>
+        ${
+          item.date
+            ? `<p class="content-card__date">${escapeHtml(item.date)}</p>`
+            : ""
+        }
       </header>
       <div class="content-card__body">
         ${
@@ -301,7 +367,7 @@ const tabs = {
             <div class="research-interest-block">
               <h3 class="group-title">Topics</h3>
               <p class="section-copy">
-                Macroeconomic theory, inflation and markup dynamics, price and wage setting, monetary policy, economic measurement, forecasting, AI.
+                Macroeconomic theory, inflation dynamics, price and wage setting, monetary policy, economic measurement, forecasting, AI.
               </p>
             </div>
             <div class="research-interest-block">
@@ -311,22 +377,20 @@ const tabs = {
               </p>
             </div>
           </div>
-          <h2 class="section-title">Published research</h2>
         </div>
-        ${cardGridMarkup(researchOutputs)}
-      </section>
-    `,
-  },
-  "dsge-notes": {
-    imageSrc: assetPath("home-photo.jpg"),
-    imageClass: "portrait-frame portrait-frame--notes",
-    panel: `
-      <section class="section-block">
-        <div>
-          <h2 class="section-title">A gentle introduction to DSGE</h2>
-          <p class="section-copy">
-            Learning DSGE can be hard if you don't already have a maths/physics background. So I wrote some notes aimed at making learning it as intuitive and time-efficient as possible. Coming soon.
-          </p>
+        <div class="content-stack">
+          <section class="content-group">
+            <h2 class="section-title">Research</h2>
+            ${cardGridMarkup(researchOutputs)}
+          </section>
+          <section class="content-group">
+            <h2 class="section-title">Policy publications</h2>
+            ${cardGridMarkup(policyPublications)}
+          </section>
+          <section class="content-group">
+            <h2 class="section-title">Software</h2>
+            ${cardGridMarkup(software)}
+          </section>
         </div>
       </section>
     `,

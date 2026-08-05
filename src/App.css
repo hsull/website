@@ -1,73 +1,401 @@
-.App {
-  text-align: center;
-  background-color: #EBE5CF;
+:root {
+  --paper: #f3e8d7;
+  --paper-deep: #e7d3b9;
+  --paper-soft: #fbf4eb;
+  --ink: #5a3a24;
+  --ink-muted: #79563d;
+  --border: rgba(90, 58, 36, 0.18);
+  --shadow: 0 18px 40px rgba(90, 58, 36, 0.08);
+  --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --sans: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.65), transparent 34%),
+    linear-gradient(180deg, #f8ecdc 0%, #f1e2cf 100%);
 }
 
-.App-header {
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.app-shell {
   min-height: 100vh;
+  padding: 32px 20px 48px;
+}
+
+.page-frame {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 36px;
+  border: 1px solid var(--border);
+  background: rgba(251, 244, 235, 0.9);
+  box-shadow: var(--shadow);
+}
+
+.masthead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 160px;
+  gap: 24px;
+  align-items: end;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.masthead__copy h1 {
+  margin: 8px 0 10px;
+  font-family: var(--serif);
+  font-size: clamp(3rem, 8vw, 5.4rem);
+  font-weight: 500;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.masthead__subtitle {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.masthead__accent {
+  min-height: 118px;
+  border-radius: 20px;
+  border: 1px solid rgba(90, 58, 36, 0.14);
+  background:
+    linear-gradient(135deg, rgba(90, 58, 36, 0.06), rgba(90, 58, 36, 0.18)),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(90, 58, 36, 0.05),
+      rgba(90, 58, 36, 0.05) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.tab-bar {
   display: flex;
-  flex-direction: column;
-  align-items:center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: black;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 26px 0 32px;
 }
 
-.App-link {
-  color: #61dafb;
+.tab-button {
+  padding: 12px 18px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.96rem;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease,
+    border-color 160ms ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.tab-button:hover,
+.tab-button:focus-visible {
+  outline: none;
+  transform: translateY(-1px);
+  border-color: rgba(90, 58, 36, 0.28);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.tab-button--active {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.content-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.portrait-panel {
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.portrait-frame {
+  position: relative;
+  overflow: hidden;
+  min-height: 460px;
+  border: 1px solid rgba(90, 58, 36, 0.14);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(90, 58, 36, 0.1), rgba(90, 58, 36, 0.03));
+}
+
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: auto 20px 18px;
+  height: 1px;
+  background: rgba(243, 232, 215, 0.45);
+}
+
+.portrait-frame--home .portrait-image {
+  object-position: center 18%;
+  transform: scale(1.04);
+}
+
+.portrait-frame--experience .portrait-image {
+  object-position: center 28%;
+  transform: scale(1.12);
+  filter: saturate(0.92) contrast(1.03);
+}
+
+.portrait-frame--research .portrait-image {
+  object-position: center 8%;
+  transform: scale(1.08);
+  filter: saturate(0.86) contrast(1.08);
+}
+
+.portrait-frame--notes .portrait-image {
+  object-position: center 22%;
+  transform: scale(1.03);
+  filter: sepia(0.18);
+}
+
+.portrait-image {
+  width: 100%;
+  height: 100%;
+  min-height: 460px;
+  display: block;
+  object-fit: cover;
+}
+
+.portrait-caption {
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: rgba(243, 232, 215, 0.72);
+}
+
+.portrait-caption p:last-child {
+  margin: 8px 0 0;
+  font-family: var(--sans);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.content-panel {
+  min-width: 0;
+}
+
+.section-block {
+  display: grid;
+  gap: 26px;
+}
+
+.section-block__intro h2 {
+  margin: 10px 0 14px;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  font-weight: 500;
+  line-height: 1.04;
+}
+
+.section-copy {
+  max-width: 60ch;
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.home-grid,
+.card-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.home-card,
+.callout-box {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.home-card h3,
+.section-group__title {
+  margin: 0 0 12px;
+  font-family: var(--sans);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.home-card p,
+.callout-box p {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.link-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.link-list a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(90, 58, 36, 0.28);
+  padding-bottom: 3px;
+}
+
+.link-list a:hover,
+.link-list a:focus-visible {
+  outline: none;
+  border-bottom-color: var(--ink);
+}
+
+.section-stack {
+  display: grid;
+  gap: 26px;
+}
+
+.section-group {
+  display: grid;
+  gap: 16px;
+}
+
+.content-card {
+  overflow: hidden;
+  border-radius: 22px;
+  box-shadow: 0 10px 24px rgba(90, 58, 36, 0.05);
+}
+
+.content-card__header {
+  padding: 18px 22px;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.content-card__header h3,
+.content-card__header p {
+  margin: 0;
+}
+
+.content-card__header h3 {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.content-card__header p {
+  margin-top: 6px;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.content-card__body {
+  padding: 22px;
+  border: 1px solid rgba(90, 58, 36, 0.1);
+  border-top: 0;
+  background: var(--paper);
+}
+
+.content-card__body p {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.97rem;
+  line-height: 1.75;
+}
+
+@media (max-width: 920px) {
+  .page-frame {
+    padding: 28px 22px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .masthead {
+    grid-template-columns: 1fr;
+  }
+
+  .masthead__accent {
+    min-height: 72px;
+  }
+
+  .content-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait-panel {
+    position: static;
+  }
+
+  .portrait-frame,
+  .portrait-image {
+    min-height: 340px;
   }
 }
 
-.profile-photo { 
-	display: flex;
-	height: 60vh; 
-	align-items: center;
-	justify-content: centre;
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 16px 12px 28px;
+  }
 
-}
+  .page-frame {
+    padding: 22px 16px;
+    border-radius: 20px;
+  }
 
-.chevron {
-  padding-top: 5vh;
-}
+  .tab-bar {
+    gap: 10px;
+  }
 
-.chevron-down {
-  height: 6vh;
-}
+  .tab-button {
+    width: 100%;
+    justify-content: center;
+  }
 
-p {
-  font-size: 18px;
-}
-.social {
-  padding:2vh
-}
-.socialIcons {
-  padding: vh;
-}
+  .section-block__intro h2 {
+    font-size: 2.1rem;
+  }
 
-SocialIcons {
-  height: 1vh;
-}
-
-
-.title-text-container {
-  padding:8vh;
+  .portrait-frame,
+  .portrait-image {
+    min-height: 280px;
+  }
 }

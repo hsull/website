@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+misc files which were saved in modelling-notes/*
+.claude

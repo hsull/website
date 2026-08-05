@@ -140,12 +140,6 @@ a {
   filter: saturate(0.84) contrast(1.08);
 }
 
-.portrait-frame--notes .portrait-image {
-  object-position: center 22%;
-  transform: scale(1.02);
-  filter: sepia(0.16);
-}
-
 .content-panel {
   min-width: 0;
 }
@@ -425,10 +419,10 @@ a {
 
 .speedometer-nav__track {
   --active-index: 0;
-  --tab-count: 4;
+  --tab-count: 3;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   column-gap: 0;
   height: 92px;
   padding-top: 8px;
