@@ -77,20 +77,10 @@ const researchOutputs = [
   },
 
   {
-    title: "Profit Margins and Consumer Prices",
-    date: "May 2026",
-    details:
-      "Co-authored first section of the article (economic theory and literature review) with Jonathan Hambur.",
-    linkLabel: "Conference listing",
-    linkHref:
-      "https://www.rba.gov.au",
-  },
-
-  {
     title: "Digest: The Relationship Between Markups, Margins and Inflation",
     date: "RBA Insights, Jul 2026",
     details:
-      "With Jonathan Hambur. A short companion piece to the Bulletin article on margins, mark-ups and consumer prices.",
+      "With Jonathan Hambur.",
     linkLabel: "Accessible at rba.gov.au",
     linkHref:
       "https://www.rba.gov.au/publications/insights/australian-economy/2026/digest-the-relationship-between-markups-margins-and-inflation.html",
@@ -129,7 +119,7 @@ const policyPublications = [
     title: "The Transition to a Complete Monthly CPI",
     date: "RBA Technical Note, Nov 2025",
     details:
-      "Setting out how the RBA would treat the ABS's new complete monthly CPI.",
+      "Policy document setting out the RBA's framework for managing the transition to the ABS's new complete monthly CPI.",
     linkLabel: "Accessible at rba.gov.au",
     linkHref:
       "https://www.rba.gov.au/publications/technical-notes/2025/the-transition-to-a-complete-monthly-cpi.html",
