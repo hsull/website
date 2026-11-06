@@ -67,13 +67,16 @@ const workExperience = [
 
 const researchOutputs = [
   {
-    title: "The NAIRU, Output Gap, and Phillips Curve in Real-Time",
+    title: "The Output Gap and NAIRU in Real-Time: More Reliable than Once Thought?",
     date: "Forthcoming",
     details:
       "With Nick West. Presented at the 2025 Public Sector Economics Conference and the 2026 Norges Bank - RBA - RBNZ Workshop.",
-    linkLabel: "Conference listing",
-    linkHref:
-      "https://www.canberra.edu.au/about-uc/faculties/busgovlaw/news-and-events/public-sector-economics-conference",
+    links: [
+      {
+        label: "Conference listing",
+        href: "https://www.canberra.edu.au/about-uc/faculties/busgovlaw/news-and-events/public-sector-economics-conference",
+      },
+    ],
   },
 
   {
@@ -81,17 +84,21 @@ const researchOutputs = [
     date: "RBA Insights, Jul 2026",
     details:
       "With Jonathan Hambur.",
-    linkLabel: "Accessible at rba.gov.au",
-    linkHref:
-      "https://www.rba.gov.au/publications/insights/australian-economy/2026/digest-the-relationship-between-markups-margins-and-inflation.html",
+    links: [
+      {
+        label: "Accessible at rba.gov.au",
+        href: "https://www.rba.gov.au/publications/insights/australian-economy/2026/digest-the-relationship-between-markups-margins-and-inflation.html",
+      },
+    ],
   },
   {
     title: "Deployment Opportunities for Space Photovoltaics and the Prospects for Perovskite Solar Cells",
     date: "Nov 2021",
     details:
       "Co-first author with Professor Anita Ho-Baillie. Published in Advanced Materials Technologies.",
-    linkLabel: "View DOI",
-    linkHref: "https://doi.org/10.1002/admt.202101059",
+    links: [
+      { label: "View DOI", href: "https://doi.org/10.1002/admt.202101059" },
+    ],
   },
 ];
 
@@ -101,18 +108,24 @@ const policyPublications = [
     date: "RBA Bulletin, May 2026",
     details:
       "With Kate Davis, Jonathan Hambur, Kevin Lane, Dan Megow and Sally Rafter.",
-    linkLabel: "Accessible at rba.gov.au",
-    linkHref:
-      "https://www.rba.gov.au/publications/bulletin/2026/may/margins-mark-ups-and-consumer-prices-theory-measurement-and-implications.html",
+    links: [
+      {
+        label: "Accessible at rba.gov.au",
+        href: "https://www.rba.gov.au/publications/bulletin/2026/may/margins-mark-ups-and-consumer-prices-theory-measurement-and-implications.html",
+      },
+    ],
   },
   {
     title: "An Update on the RBA's Approach to Assessing Full Employment",
     date: "RBA Technical Note, Feb 2026",
     details:
       "With Mike Major and Kevin Lane.",
-    linkLabel: "Accessible at rba.gov.au",
-    linkHref:
-      "https://www.rba.gov.au/publications/technical-notes/2026/update-on-the-rbas-approach-to-assessing-full-employment.html",
+    links: [
+      {
+        label: "Accessible at rba.gov.au",
+        href: "https://www.rba.gov.au/publications/technical-notes/2026/update-on-the-rbas-approach-to-assessing-full-employment.html",
+      },
+    ],
   },
 
   {
@@ -120,11 +133,21 @@ const policyPublications = [
     date: "RBA Technical Note, Nov 2025",
     details:
       "Policy document setting out the RBA's framework for managing the transition to the ABS's new complete monthly CPI.",
-    linkLabel: "Accessible at rba.gov.au",
-    linkHref:
-      "https://www.rba.gov.au/publications/technical-notes/2025/the-transition-to-a-complete-monthly-cpi.html",
+    links: [
+      {
+        label: "Accessible at rba.gov.au",
+        href: "https://www.rba.gov.au/publications/technical-notes/2025/the-transition-to-a-complete-monthly-cpi.html",
+      },
+    ],
   },
 ];
+
+// ezdyn links are shared by the Software card and the ezdyn tab.
+const ezdynLinks = {
+  github: "https://github.com/RBA-ER-Replication/ezdyn",
+  whitepaper: "https://github.com/RBA-ER-Replication/ezdyn/blob/468e9c4e28d28f715db5eced6cc03991be567cb7/ezdyn.pdf",
+  demo: "https://01a1b082-f2eb-61b6-a308-c4c2c0261a0c.share.connect.posit.cloud/",
+};
 
 const software = [
   {
@@ -132,14 +155,22 @@ const software = [
     date: "R package",
     details:
       "Load in linear dynamic models (from Dynare or an Excel file of IRFs) and get straight to the interesting part: impulse responses, scenarios, 'alternative policy path' exercises and historical shock decompositions, lined up side by side across every model at once. ezdyn takes care of the fiddly bits, handling variable naming, units, scaling and consistent plotting for you, and powers a user-friendly interactive dashboard for exploring a configured set of models.",
-    linkLabel: "View on GitHub",
-    linkHref: "https://github.com/RBA-ER-Replication/ezdyn",
+    links: [
+      { label: "View on GitHub", href: ezdynLinks.github },
+      { label: "Read the whitepaper", href: ezdynLinks.whitepaper },
+      { label: "Learn more", tab: "ezdyn" },
+    ],
   },
   {
-    title: "RBAtardis",
-    date: "Forthcoming",
+    title: "timetravelr",
+    date: "R package, December 2024",
     details:
       "Tools for 'sending models back in time': working with data vintages and sourcing legacy vintage data from the ABS.",
+    
+    links: [
+      { label: "View on GitHub", href: "https://github.com/RBA-ER-Replication/timetravelr" },
+      { label: "Read the whitepaper", href: "https://github.com/RBA-ER-Replication/timetravelr/blob/main/vignettes/timetravelr.pdf" },
+    ],
   },
   {
     title: "RBAclio",
@@ -193,6 +224,7 @@ const tabOrder = [
   { id: "home", label: "Home" },
   { id: "experience", label: "Experience" },
   { id: "research", label: "Research" },
+  { id: "ezdyn", label: "ezdyn" },
 ];
 
 const assetVersion = "20260329-1";
@@ -244,23 +276,41 @@ function cardMarkup(item) {
             : ""
         }
         ${
-          item.linkHref
+          item.links?.length
             ? `
               <p class="content-card__link-wrap">
-                <a
-                  class="content-card__link"
-                  href="${escapeHtml(item.linkHref)}"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  ${escapeHtml(item.linkLabel || "Open link")}
-                </a>
+                ${item.links
+                  .map((link) => linkMarkup(link, "content-card__link"))
+                  .join("")}
               </p>
             `
             : ""
         }
       </div>
     </article>
+  `;
+}
+
+// A link with `tab` switches to that tab on this site; one with `href`
+// opens an external page in a new browser tab.
+function linkMarkup(link, className) {
+  if (link.tab) {
+    return `
+      <a
+        class="${className}"
+        href="#${escapeHtml(link.tab)}"
+        data-tab-link="${escapeHtml(link.tab)}"
+      >${escapeHtml(link.label)}</a>
+    `;
+  }
+
+  return `
+    <a
+      class="${className}"
+      href="${escapeHtml(link.href)}"
+      target="_blank"
+      rel="noreferrer"
+    >${escapeHtml(link.label)}</a>
   `;
 }
 
@@ -319,8 +369,15 @@ function socialLinkMarkup(link) {
   `;
 }
 
+const ezdynPageLinks = [
+  { label: "Whitepaper", href: ezdynLinks.whitepaper },
+  { label: "Live Demo", href: ezdynLinks.demo },
+  { label: "GitHub", href: ezdynLinks.github },
+];
+
 const tabs = {
   home: {
+    layoutClass: "layout--home",
     imageSrc: assetPath("home-photo.jpg"),
     imageClass: "portrait-frame portrait-frame--home",
     panel: `
@@ -397,9 +454,62 @@ const tabs = {
       </section>
     `,
   },
+  ezdyn: {
+    // No portrait or name banner on this tab: the full page goes to ezdyn.
+    layoutClass: "layout--wide",
+    hideMasthead: true,
+    panel: `
+      <section class="section-block product-page">
+        <header class="product-page__intro">
+          <h2 class="section-title">ezdyn</h2>
+          <p class="product-page__tagline">
+            Sufficient-statistics analysis and dashboarding of dynamic economic models in R
+          </p>
+          <p class="section-copy">
+            ezdyn is an R package that aims to make completing policy analysis with
+            (suites of) dynamic economic models frictionless. ezdyn can complete
+            analytical tasks (e.g. impulse response analysis, historical shock
+            decompositions, policy counterfactuals, and optimal policy exercises)
+            across suites of models in a single line of code, or via a code-free
+            interactive dashboard in your web browser.
+          </p>
+          <p class="section-copy">
+            ezdyn implements recently developed techniques from the
+            'sufficient-statistics' literature on policy counterfactuals and
+            optimal policy.
+          </p>
+          <div class="product-page__links">
+            ${ezdynPageLinks
+              .map((link) => linkMarkup(link, "button-link"))
+              .join("")}
+          </div>
+        </header>
+        <figure class="product-page__figure">
+          <a
+            href="${assetPath("ezdyn-dashboard.png")}"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              class="product-page__image"
+              src="${assetPath("ezdyn-dashboard.png")}"
+              alt="The ezdyn dashboard's Optimal Policy tab: model, strategy and loss-function settings on the left, and optimal paths for the cash rate, GDP growth, trimmed mean inflation and the unemployment rate under two models on the right."
+              width="1764"
+              height="925"
+            />
+          </a>
+          <figcaption class="product-page__caption">
+            The Optimal Policy tab of the ezdyn dashboard. Baseline paths are
+            dummy data, so the results shown are illustrative only.
+          </figcaption>
+        </figure>
+      </section>
+    `,
+  },
 };
 
 const panel = document.querySelector("#content-panel");
+const masthead = document.querySelector(".masthead");
 const layout = document.querySelector(".layout");
 const portraitFrame = document.querySelector("#portrait-frame");
 const portraitImage = document.querySelector("#portrait-image");
@@ -448,19 +558,35 @@ function renderNav() {
 function renderTab(tabKey) {
   const tab = tabs[tabKey];
   activeTabKey = tabKey;
-  const isHome = tabKey === "home";
 
   panel.classList.remove("is-swapping");
   void panel.offsetWidth;
   panel.classList.add("is-swapping");
   panel.innerHTML = tab.panel;
 
-  layout.classList.toggle("layout--home", isHome);
-  portraitFrame.className = tab.imageClass;
-  portraitImage.src = tab.imageSrc;
+  masthead.classList.toggle("is-hidden", Boolean(tab.hideMasthead));
+  layout.className = ["layout", tab.layoutClass].filter(Boolean).join(" ");
+  if (tab.imageSrc) {
+    portraitFrame.className = tab.imageClass;
+    portraitImage.src = tab.imageSrc;
+  }
   panel.setAttribute("aria-labelledby", `nav-tab-${tabKey}`);
+  // Keep the URL in step with the tab so every tab (e.g. /#ezdyn) can be linked to.
+  history.replaceState(null, "", tabKey === "home" ? location.pathname : `#${tabKey}`);
   renderNav();
 }
+
+panel.addEventListener("click", (event) => {
+  const link = event.target.closest("[data-tab-link]");
+
+  if (!link) {
+    return;
+  }
+
+  event.preventDefault();
+  renderTab(link.dataset.tabLink);
+  window.scrollTo({ top: 0 });
+});
 
 navTrack.addEventListener("keydown", (event) => {
   if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") {
@@ -478,5 +604,8 @@ navTrack.addEventListener("keydown", (event) => {
   event.preventDefault();
 });
 
+const initialTabKey = location.hash.slice(1);
+
+navTrack.style.setProperty("--tab-count", tabOrder.length);
 createNavButtons();
-renderTab("home");
+renderTab(getTabIndex(initialTabKey) === -1 ? "home" : initialTabKey);

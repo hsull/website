@@ -49,6 +49,10 @@ a {
   border-bottom: 1px solid var(--border);
 }
 
+.masthead.is-hidden {
+  display: none;
+}
+
 .masthead__copy {
   text-align: center;
 }
@@ -97,6 +101,14 @@ a {
 .layout--home .content-panel {
   max-width: 520px;
   margin: 0 auto;
+}
+
+.layout--wide {
+  display: block;
+}
+
+.layout--wide .media-panel {
+  display: none;
 }
 
 .media-panel {
@@ -308,6 +320,9 @@ a {
 
 .content-card__link-wrap {
   margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
 }
 
 .content-card__link {
@@ -321,6 +336,81 @@ a {
 .content-card__link:focus-visible {
   outline: none;
   border-bottom-color: var(--ink);
+}
+
+.product-page__intro {
+  display: grid;
+  gap: 14px;
+}
+
+.product-page__intro .section-title {
+  margin-bottom: 0;
+}
+
+.product-page__intro .section-copy {
+  max-width: 82ch;
+}
+
+.product-page__tagline {
+  margin: 0 0 6px;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.product-page__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.button-link {
+  padding: 11px 22px;
+  border: 1px solid rgba(94, 61, 40, 0.34);
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.button-link:hover,
+.button-link:focus-visible {
+  outline: none;
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.product-page__figure {
+  margin: 0;
+}
+
+.product-page__figure a {
+  display: block;
+}
+
+.product-page__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.product-page__caption {
+  margin-top: 10px;
+  color: var(--ink-muted);
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.6;
 }
 
 .home-stage {
@@ -419,10 +509,10 @@ a {
 
 .speedometer-nav__track {
   --active-index: 0;
-  --tab-count: 3;
+  --tab-count: 4; /* overridden from app.js to match the number of tabs */
   position: relative;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--tab-count), minmax(0, 1fr));
   column-gap: 0;
   height: 92px;
   padding-top: 8px;
@@ -546,10 +636,15 @@ a {
     height: 86px;
   }
 
+  .speedometer-nav {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
   .speedometer-tab {
-    font-size: 0.77rem;
-    letter-spacing: 0.08em;
-    padding: 34px 6px 8px;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    padding: 34px 2px 8px;
   }
 
   .employment-group__cards {
