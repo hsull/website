@@ -179,7 +179,7 @@ const software = [
     
     links: [
       { label: "View on GitHub", href: "https://github.com/RBA-ER-Replication/timetravelr" },
-      { label: "Read the whitepaper", href: "https://github.com/RBA-ER-Replication/timetravelr/blob/main/vignettes/timetravelr.pdf" },
+      { label: "Read the whitepaper", href: "https://github.com/RBA-ER-Replication/timetravelr/blob/main/vignettes/timetravelr.pdf?raw=true" },
     ],
   },
   {
