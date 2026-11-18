@@ -70,7 +70,12 @@ const researchOutputs = [
     title: "The Output Gap and NAIRU in Real-Time: More Reliable than Once Thought?",
     date: "Forthcoming",
     details:
-      "With Nick West. Presented at the 2025 Public Sector Economics Conference, the 2026 Norges Bank - RBA - RBNZ Workshop, and the Society for Nonlinear Dynamics and Econometrics — Tenth CEM Workshop.",
+      "With Nick West. Presented at:",
+    bullets: [
+      "2025 Public Sector Economics Conference",
+      "2026 Norges Bank - RBA - RBNZ Workshop",
+      "Society for Nonlinear Dynamics and Econometrics — Tenth CEM Workshop",
+    ],
     links: [
       {
         label: "Conference listing",
@@ -107,7 +112,7 @@ const policyPublications = [
     title: "Margins, Mark-ups and Consumer Prices: Theory, Measurement and Implications",
     date: "RBA Bulletin, May 2026",
     details:
-      "With Kate Davis, Jonathan Hambur, Kevin Lane, Dan Megow and Sally Rafter.",
+      "With Kate Davis, Jonathan Hambur, Kevin Lane, Dom Megow and Sally Rafter.",
     links: [
       {
         label: "Accessible at rba.gov.au",
