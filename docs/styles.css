@@ -304,6 +304,10 @@ a {
   line-height: 1.75;
 }
 
+.content-card__text + .content-card__text {
+  margin-top: 12px;
+}
+
 .content-card__list {
   margin: 12px 0 0;
   padding-left: 18px;

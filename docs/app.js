@@ -70,7 +70,7 @@ const researchOutputs = [
     title: "The Output Gap and NAIRU in Real-Time: More Reliable than Once Thought?",
     date: "Forthcoming",
     details:
-      "With Nick West. Presented at the 2025 Public Sector Economics Conference and the 2026 Norges Bank - RBA - RBNZ Workshop.",
+      "With Nick West. Presented at the 2025 Public Sector Economics Conference, the 2026 Norges Bank - RBA - RBNZ Workshop, and the Society for Nonlinear Dynamics and Econometrics — Tenth CEM Workshop.",
     links: [
       {
         label: "Conference listing",
@@ -149,12 +149,17 @@ const ezdynLinks = {
   demo: "https://01a1b082-f2eb-61b6-a308-c4c2c0261a0c.share.connect.posit.cloud/",
 };
 
+// ezdyn description paragraphs, shared by the Software card and the ezdyn tab.
+const ezdynDescription = [
+  "ezdyn is an R package that aims to make completing policy analysis with (suites of) dynamic economic models frictionless. ezdyn can complete analytical tasks (e.g. impulse response analysis, historical shock decompositions, policy counterfactuals, and optimal policy exercises) across suites of models in a single line of code, or via a code-free interactive dashboard in your web browser.",
+  "ezdyn implements recently developed techniques from the 'sufficient-statistics' literature on policy counterfactuals and optimal policy.",
+];
+
 const software = [
   {
     title: "ezdyn and ezdyn dashboard",
     date: "R package",
-    details:
-      "Load in linear dynamic models (from Dynare or an Excel file of IRFs) and get straight to the interesting part: impulse responses, scenarios, 'alternative policy path' exercises and historical shock decompositions, lined up side by side across every model at once. ezdyn takes care of the fiddly bits, handling variable naming, units, scaling and consistent plotting for you, and powers a user-friendly interactive dashboard for exploring a configured set of models.",
+    details: ezdynDescription,
     links: [
       { label: "View on GitHub", href: ezdynLinks.github },
       { label: "Read the whitepaper", href: ezdynLinks.whitepaper },
@@ -223,7 +228,7 @@ const homeLinks = [
 const tabOrder = [
   { id: "home", label: "Home" },
   { id: "experience", label: "Experience" },
-  { id: "research", label: "Research" },
+  { id: "research", label: "Research + Projects" },
   { id: "ezdyn", label: "ezdyn" },
 ];
 
@@ -259,11 +264,11 @@ function cardMarkup(item) {
         }
       </header>
       <div class="content-card__body">
-        ${
-          item.details
-            ? `<p>${escapeHtml(item.details)}</p>`
-            : ""
-        }
+        ${[item.details]
+          .flat()
+          .filter(Boolean)
+          .map((paragraph) => `<p class="content-card__text">${escapeHtml(paragraph)}</p>`)
+          .join("")}
         ${
           item.bullets?.length
             ? `
@@ -432,7 +437,7 @@ const tabs = {
             <div class="research-interest-block">
               <h3 class="group-title">Techniques</h3>
               <p class="section-copy">
-                DSGE modelling, time series analysis, dynamics, machine learning, natural language processing, networks, agent-based modelling.
+                DSGE modelling, time series analysis, dynamics, machine learning, natural language processing.
               </p>
             </div>
           </div>
@@ -443,12 +448,12 @@ const tabs = {
             ${cardGridMarkup(researchOutputs)}
           </section>
           <section class="content-group">
-            <h2 class="section-title">Policy publications</h2>
-            ${cardGridMarkup(policyPublications)}
-          </section>
-          <section class="content-group">
             <h2 class="section-title">Software</h2>
             ${cardGridMarkup(software)}
+          </section>
+          <section class="content-group">
+            <h2 class="section-title">Policy publications</h2>
+            ${cardGridMarkup(policyPublications)}
           </section>
         </div>
       </section>
@@ -465,19 +470,9 @@ const tabs = {
           <p class="product-page__tagline">
             Sufficient-statistics analysis and dashboarding of dynamic economic models in R
           </p>
-          <p class="section-copy">
-            ezdyn is an R package that aims to make completing policy analysis with
-            (suites of) dynamic economic models frictionless. ezdyn can complete
-            analytical tasks (e.g. impulse response analysis, historical shock
-            decompositions, policy counterfactuals, and optimal policy exercises)
-            across suites of models in a single line of code, or via a code-free
-            interactive dashboard in your web browser.
-          </p>
-          <p class="section-copy">
-            ezdyn implements recently developed techniques from the
-            'sufficient-statistics' literature on policy counterfactuals and
-            optimal policy.
-          </p>
+          ${ezdynDescription
+            .map((paragraph) => `<p class="section-copy">${escapeHtml(paragraph)}</p>`)
+            .join("")}
           <div class="product-page__links">
             ${ezdynPageLinks
               .map((link) => linkMarkup(link, "button-link"))
