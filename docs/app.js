@@ -68,7 +68,7 @@ const workExperience = [
 const researchOutputs = [
   {
     title: "The Output Gap and NAIRU in Real-Time: More Reliable than Once Thought?",
-    date: "Forthcoming",
+    date: "Working paper",
     details:
       "With Nick West. Presented at:",
     bullets: [
@@ -78,8 +78,20 @@ const researchOutputs = [
     ],
     links: [
       {
-        label: "Conference listing",
-        href: "https://www.canberra.edu.au/about-uc/faculties/busgovlaw/news-and-events/public-sector-economics-conference",
+        label: "Working paper",
+        href: "https://hamishsullivan.com/papers/stars",
+      },
+    ],
+  },
+  {
+    title: "ezdyn: Frictionless Analysis of Dynamic Economic Models",
+    date: "Working paper",
+    details:
+      "With Callum Ryan.",
+    links: [
+      {
+        label: "Working paper",
+        href: "https://hamishsullivan.com/papers/ezdyn",
       },
     ],
   },
