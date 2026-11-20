@@ -150,7 +150,7 @@ const policyPublications = [
 // ezdyn links are shared by the Software card and the ezdyn tab.
 const ezdynLinks = {
   github: "https://github.com/RBA-ER-Replication/ezdyn",
-  whitepaper: "https://github.com/RBA-ER-Replication/ezdyn/blob/main/ezdyn.pdf?raw=true",
+  whitepaper: "https://raw.githubusercontent.com/RBA-ER-Replication/ezdyn/refs/heads/main/ezdyn.pdf",
   demo: "https://01a1b082-f2eb-61b6-a308-c4c2c0261a0c.share.connect.posit.cloud/",
 };
 
