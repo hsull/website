@@ -67,7 +67,7 @@ const workExperience = [
 
 const researchOutputs = [
   {
-    title: "The Output Gap and NAIRU in Real-Time: More Reliable than Once Thought?",
+    title: "Output and Unemployment Gaps: More Useful in Real-Time than Once Thought?",
     date: "Working paper",
     details:
       "With Nick West. Presented at:",
