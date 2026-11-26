@@ -429,8 +429,8 @@ const tabs = {
     `,
   },
   experience: {
-    imageSrc: assetPath("experience-photo.jpg"),
-    imageClass: "portrait-frame portrait-frame--experience",
+    imageSrc: assetPath("home-photo.jpg"),
+    imageClass: "portrait-frame portrait-frame--home",
     panel: `
       <section class="section-block">
         <div>
